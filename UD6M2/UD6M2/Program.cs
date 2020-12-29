@@ -100,23 +100,24 @@ namespace UD6M2
             Console.ReadLine();
             
             int hour,minutes,seconds;
-            int stop = 0;
-            hour = 0;
-            minutes = 0;
-            seconds = 0;
+            DateTime date = DateTime.Now;
+            hour = date.Hour;
+            minutes = date.Minute;
+            seconds = date.Second;
 
-            string hora = string.Format("{0:00}", hour);
-            string minuts = string.Format("{0:00}", minutes);
-            string segons = string.Format("{0:00}", seconds);
-            minutes = 0;
-            seconds = 0;
-            while (stop == 0)
+            string hora;
+            string minuts;
+            string segons;
+
+            while (true)
             {
                 hora = string.Format("{0:00}", hour);
                 minuts = string.Format("{0:00}", minutes);
                 segons = string.Format("{0:00}", seconds);
                 Console.Clear();
                 Console.WriteLine(hora + ":" + minuts + ":" + segons);
+                /* Alternativament puc tenir les dades en int i fer
+                 * Console.WriteLine("{0:00}:{1:00}:{2:00}", hora, minuts, segons);*/
                 Thread.Sleep(1000);
                 seconds++;
                 if (seconds == 60)
