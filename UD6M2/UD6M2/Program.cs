@@ -56,7 +56,23 @@ namespace UD6M2
 
             }
             //FASE3
-
+            Dictionary<char, int> Dic = new Dictionary<char, int>();
+            for (int i = 0; i < nom.Length; i++)
+            {
+                if (Dic.ContainsKey(nom[i]) == true)
+                {
+                    Dic[nom[i]]++;
+                }
+                else
+                {
+                    Dic.Add(nom[i], 1);
+                }
+            }
+            // foreach per imprimir tot un diccionari
+            foreach (KeyValuePair<char, int> entrada in Dic)
+            {
+                Console.WriteLine("Lletra = {0}, Valor = {1}", entrada.Key, entrada.Value);
+            }
 
             //FASE4
             List<char> Nom = new List<char>() { 'A', 'R', 'N', 'A', 'U' };
